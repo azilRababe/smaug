@@ -22,8 +22,7 @@ export const exploreWorlds = [
 ];
 
 export const startingFeatures = [
-  "Reach out and ignite your journey.",
-  "Help us understand your goals, lifestyle, and needs.",
+  "Reach out and help us understand your goals, lifestyle, and needs.",
   "Get matched with a certified elite trainer tailored to your path.",
   "Experience your first personalized workout, on us.",
   "Choose your realm and start your transformation.",

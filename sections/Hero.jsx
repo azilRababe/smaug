@@ -15,7 +15,7 @@ const Hero = () => (
     >
       <div className="relative z-10 flex flex-col items-center justify-center">
         <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
-          ignite
+          ignitee
         </motion.h1>
         <motion.div
           variants={textVariant(1.2)}
@@ -23,7 +23,7 @@ const Hero = () => (
         >
           <h1 className={styles.heroHeading}> your</h1>
           {/* <div className={styles.heroDText} /> */}
-          <div className="px-5"> </div>
+          <div className="px-2 md:px-5"> </div>
           <h1 className={styles.heroHeading}> strength</h1>
         </motion.div>
       </div>
