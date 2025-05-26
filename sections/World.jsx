@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import styles from '../styles';
-import { TitleText, TypingText } from '../components';
-import { staggerContainer, fadeIn } from '../utils/motion';
+import { motion } from "framer-motion";
+import styles from "../styles";
+import { TitleText, TypingText } from "../components";
+import { staggerContainer, fadeIn } from "../utils/motion";
 
 const World = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -14,18 +14,14 @@ const World = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <TypingText title="| People on the World" textStyles="text-center" />
+      <TypingText title="| we soar to your side" textStyles="text-center" />
       <TitleText
-        title={(
-          <>
-            Track friends around you and invite them to play together in the same world
-          </>
-        )}
+        title={<>No matter where you roam, our coaches will find you.</>}
         textStyles="text-center"
       />
 
       <motion.div
-        variants={fadeIn('up', 'tween', 0.3, 1)}
+        variants={fadeIn("up", "tween", 0.3, 1)}
         className="relative mt-[69px] flex w-full h-[550px]"
       >
         <img src="/map.png" alt="map" className="w-full h-full object-cover" />
@@ -48,7 +44,6 @@ const World = () => (
           <img src="/people-06.png" alt="people" className="w-full h-full" />
         </div>
         {/* Character on Map ends */}
-
       </motion.div>
     </motion.div>
   </section>

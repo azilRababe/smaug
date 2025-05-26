@@ -1,87 +1,84 @@
 export const exploreWorlds = [
   {
-    id: 'world-1',
-    imgUrl: '/planet-01.png',
-    title: 'The Hogwarts',
+    id: "1",
+    imgUrl: "/strength-training.jpg",
+    title: "Strength Training",
   },
   {
-    id: 'world-2',
-    imgUrl: '/planet-02.png',
-    title: 'The Upside Down',
+    id: "2",
+    imgUrl: "/cardio-endurance.jpg",
+    title: "Cardio & Endurance",
   },
   {
-    id: 'world-3',
-    imgUrl: '/planet-03.png',
-    title: 'Hueco Mundo',
+    id: "3",
+    imgUrl: "/flexibility-mobility.jpg",
+    title: "Flexibility & Mobility",
   },
   {
-    id: 'world-4',
-    imgUrl: '/planet-04.png',
-    title: 'Paradise Island',
-  },
-  {
-    id: 'world-5',
-    imgUrl: '/planet-05.png',
-    title: 'Hawkins Labs',
+    id: "4",
+    imgUrl: "/sports-training.jpg",
+    title: "Sports-Specific Training",
   },
 ];
 
 export const startingFeatures = [
-  'Find a world that suits you and you want to enter',
-  'Enter the world by reading precaution to be safe',
-  'No need to beat around the bush, just stay on the gas and have fun',
+  "Reach out and ignite your journey.",
+  "Help us understand your goals, lifestyle, and needs.",
+  "Get matched with a certified elite trainer tailored to your path.",
+  "Experience your first personalized workout, on us.",
+  "Choose your realm and start your transformation.",
 ];
 
-export const newFeatures = [
-  {
-    imgUrl: '/vrpano.svg',
-    title: 'A new world',
-    subtitle:
-        'we have the latest update with new world for you to try never mind',
-  },
-  {
-    imgUrl: '/headset.svg',
-    title: 'More realistic',
-    subtitle:
-        'In the latest update, your eyes are narrow, making the world more realistic than ever',
-  },
-];
+// export const newFeatures = [
+//   {
+//     imgUrl: "/vrpano.svg",
+//     title: "A new world",
+//     subtitle:
+//       "we have the latest update with new world for you to try never mind",
+//   },
+//   {
+//     imgUrl: "/headset.svg",
+//     title: "More realistic",
+//     subtitle:
+//       "In the latest update, your eyes are narrow, making the world more realistic than ever",
+//   },
+// ];
 
 export const insights = [
   {
-    imgUrl: '/planet-06.png',
-    title: 'The launch of the Metaverse and be happy :)',
+    imgUrl: "/coach-pt.jpg",
+    title: "Human Coaches. Not Robots.",
     subtitle:
-        'Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Diam maecenas sed enim ut sem viverra alique.',
+      "No recycled PDFs or bots. Just world-class, certified coaches — handpicked for your goals, your grind, your greatness.",
   },
   {
-    imgUrl: '/planet-07.png',
-    title: '7 tips to easily master the madness of the Metaverse',
+    imgUrl: "/smart-watch.jpg",
+    title: "Data-Driven Precision.",
     subtitle:
-        'Vitae congue eu consequat ac felis donec. Et magnis dis parturient montes nascetur ridiculus mus. Convallis tellus id interdum',
+      "We fuse wearable tech, AI form tracking, and real-time data to perfect every movement — down to the last rep.",
   },
   {
-    imgUrl: '/planet-08.png',
-    title: 'With one platform you can explore the whole world virtually',
+    imgUrl: "/home-training.jpg",
+    title: "Luxury Training. Anywhere.",
     subtitle:
-        'Quam quisque id diam vel quam elementum. Viverra nam libero justo laoreet sit amet cursus sit. Mauris in aliquam sem',
+      "Private gym, home, or villa — your coach meets you wherever your empire resides.",
   },
 ];
 
 export const socials = [
+  // {
+  //   name: "twitter",
+  //   url: "/twitter.svg",
+  //   link: "https://twitter.com/VigneshGupta9",
+  // },
   {
-    name: 'twitter',
-    url: '/twitter.svg',
-    link: 'https://twitter.com/VigneshGupta9',
+    name: "linkedin",
+    url: "/linkedin.svg",
+    link: "#",
   },
   {
-    name: 'linkedin',
-    url: '/linkedin.svg',
-    link: 'https://www.linkedin.com/in/vigneshgupta/',
-  },
-  {
-    name: 'instagram',
-    url: '/instagram.svg',
-    link: 'https://www.instagram.com/_viggi.g_/',
+    name: "instagram",
+    url: "/instagram.svg",
+    link: "https://www.instagram.com/smaugtraining/",
   },
 ];
