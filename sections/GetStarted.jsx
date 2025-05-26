@@ -21,7 +21,7 @@ const GetStarted = () => (
         className={`${styles.flexCenter} flex-1`}
       >
         <img
-          src="/trainers.png"
+          src="/trainers01.png"
           alt="Get-Started"
           className="w-[90%] h-[90%] object-content"
         />
