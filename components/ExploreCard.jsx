@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GiFlame } from "react-icons/gi";
 import styles from "../styles";
 import { fadeIn } from "../utils/motion";
-import { GiFlame } from "react-icons/gi";
 
 const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
   <motion.div

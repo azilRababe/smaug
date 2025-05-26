@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GiFlame } from "react-icons/gi";
 import { socials } from "../constants";
 
 import styles from "../styles";
 import { footerVariants } from "../utils/motion";
-
-import { GiFlame } from "react-icons/gi";
 
 const Footer = () => (
   <motion.footer
