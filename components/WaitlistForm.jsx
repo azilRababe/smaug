@@ -4,9 +4,9 @@ import { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { logEvent } from "firebase/analytics";
 
-import { db, analytics } from "../lib/firebase";
-
 import toast from "react-hot-toast";
+
+import { db, getAnalyticsInstance } from "../lib/firebase";
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -25,14 +25,13 @@ const WaitlistForm = () => {
         timestamp: serverTimestamp(),
       });
 
+      const analytics = await getAnalyticsInstance();
       if (analytics) {
         logEvent(analytics, "waitlist_joined", { email });
       }
 
       setSubmitted(true);
-      toast.success(
-        "You've successfully joined the waitlist! Stay tuned for updates."
-      );
+      toast.success("You've successfully joined the waitlist!");
       setEmail("");
     } catch (error) {
       toast.error("Failed to join waitlist. Please try again.");
