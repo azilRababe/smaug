@@ -6,7 +6,7 @@ import { logEvent } from "firebase/analytics";
 
 import toast from "react-hot-toast";
 
-import { db, getAnalyticsInstance } from "../lib/firebase";
+import { db, analytics } from "../lib/firebase";
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +25,6 @@ const WaitlistForm = () => {
         timestamp: serverTimestamp(),
       });
 
-      const analytics = await getAnalyticsInstance();
       if (analytics) {
         logEvent(analytics, "waitlist_joined", { email });
       }
