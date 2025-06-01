@@ -22,7 +22,7 @@ const About = () => (
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
       >
-        <span className="font-extrabold"> Smaug </span> isn’t just coaching —
+        <span className="font-extrabold"> Smaug-X </span> isn’t just coaching —
         it’s a transformation. We blend ancient discipline with cutting-edge
         tech, delivering concierge-level fitness for those who demand the
         extraordinary.

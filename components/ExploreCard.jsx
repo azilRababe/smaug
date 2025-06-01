@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { GiFlame } from "react-icons/gi";
 import styles from "../styles";
@@ -13,7 +15,9 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
     } flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer`}
     onClick={() => handleClick(id)}
   >
-    <img
+    <Image
+      width={500}
+      height={500}
       src={imgUrl}
       alt={title}
       className="absolute w-full h-full object-cover rounded-[24px]"

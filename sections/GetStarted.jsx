@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { staggerContainer, fadeIn, planetVariants } from "../utils/motion";
@@ -20,7 +22,9 @@ const GetStarted = () => (
         variants={planetVariants("left")}
         className={`${styles.flexCenter} flex-1`}
       >
-        <img
+        <Image
+          height={500}
+          width={500}
           src="/trainers01.png"
           alt="Get-Started"
           className="w-[90%] h-[90%] object-content"

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { slideIn, staggerContainer, textVariant } from "../utils/motion";
+import Image from "next/image";
 
 const Hero = () => (
   <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
@@ -15,7 +16,7 @@ const Hero = () => (
     >
       <div className="relative z-10 flex flex-col items-center justify-center">
         <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
-          ignitee
+          ignite
         </motion.h1>
         <motion.div
           variants={textVariant(1.2)}
@@ -33,7 +34,9 @@ const Hero = () => (
         className="relative w-full lg:-mt-[30px] md:-mt-[18px] -mt-[15px]  2xl:pl-[280px]"
       >
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] sm:-top-[20px] -top-[10px]" />
-        <img
+        <Image
+          width={5472}
+          height={3648}
           src="/cover_deadlift.jpg"
           alt="cover"
           className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative"

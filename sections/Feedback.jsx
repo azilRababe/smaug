@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { fadeIn, staggerContainer, zoomIn } from "../utils/motion";
@@ -36,7 +38,9 @@ const Feedback = () => (
         variants={fadeIn("left", "tween", 0.2, 1)}
         className="relative flex-1 flex justify-center item-center"
       >
-        <img
+        <Image
+          width={5472}
+          height={3648}
           src="/personal-trainer.jpg"
           alt="planet"
           className="w-full lg:h-[610px] h-auto min-h-[210px] object-cover rounded-[40px]"
@@ -45,7 +49,9 @@ const Feedback = () => (
           variants={zoomIn(0.4, 1)}
           className="lg:block hidden absolute -left-[10%] top-[3%]"
         >
-          <img
+          <Image
+            width={170}
+            height={170}
             src="/stamp01.png"
             alt="stamp"
             className="md:w-[170px] w-[115px]  md:h-[170px] h-[115px] object-contain"

@@ -1,13 +1,13 @@
 export const exploreWorlds = [
   {
     id: "1",
-    imgUrl: "/strength-training.jpg",
-    title: "Strength Training",
+    imgUrl: "/cardio-endurance.jpg",
+    title: "Cardio & Endurance",
   },
   {
     id: "2",
-    imgUrl: "/cardio-endurance.jpg",
-    title: "Cardio & Endurance",
+    imgUrl: "/strength-training.jpg",
+    title: "Strength Training",
   },
   {
     id: "3",
@@ -28,20 +28,20 @@ export const startingFeatures = [
   "Choose your realm and start your transformation.",
 ];
 
-// export const newFeatures = [
-//   {
-//     imgUrl: "/vrpano.svg",
-//     title: "A new world",
-//     subtitle:
-//       "we have the latest update with new world for you to try never mind",
-//   },
-//   {
-//     imgUrl: "/headset.svg",
-//     title: "More realistic",
-//     subtitle:
-//       "In the latest update, your eyes are narrow, making the world more realistic than ever",
-//   },
-// ];
+export const newFeatures = [
+  {
+    imgUrl: "/vrpano.svg",
+    title: "A new world",
+    subtitle:
+      "we have the latest update with new world for you to try never mind",
+  },
+  {
+    imgUrl: "/headset.svg",
+    title: "More realistic",
+    subtitle:
+      "In the latest update, your eyes are narrow, making the world more realistic than ever",
+  },
+];
 
 export const insights = [
   {
@@ -73,11 +73,11 @@ export const socials = [
   {
     name: "linkedin",
     url: "/linkedin.svg",
-    link: "#",
+    link: "https://linkedin.com/company/smaugx",
   },
   {
     name: "instagram",
     url: "/instagram.svg",
-    link: "https://www.instagram.com/smaugtraining/",
+    link: "https://www.instagram.com/smaugx_/",
   },
 ];

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { motion } from "framer-motion";
 import styles from "../styles";
 import { TitleText, TypingText } from "../components";
@@ -24,24 +26,60 @@ const World = () => (
         variants={fadeIn("up", "tween", 0.3, 1)}
         className="relative mt-[69px] flex w-full h-[550px]"
       >
-        <img src="/map.png" alt="map" className="w-full h-full object-cover" />
+        <Image
+          height={550}
+          width={1200}
+          src="/map.png"
+          alt="map"
+          className="w-full h-full object-cover"
+        />
 
         {/* Here We are displaying chararcters on the map */}
         <div className="absolute top-[32%] left-[62%] w-[70px] h-[70px] p-[6px] rounded-full bg-[#5d6680]">
-          <img src="/people-02.png" alt="people" className="w-full h-full" />
+          <Image
+            src="/people-02.png"
+            alt="people"
+            className="w-full h-full"
+            height={70}
+            width={70}
+          />
         </div>
         <div className="absolute sm:top-10 bottom-40 left-20 w-[70px] h-[70px] p-[6px] rounded-full bg-[#5d6680]">
-          <img src="/people-03.png" alt="people" className="w-full h-full" />
+          <Image
+            src="/people-03.png"
+            alt="people"
+            className="w-full h-full"
+            height={70}
+            width={70}
+          />
         </div>
         <div className="hidden lg:block absolute bottom-20 right-20 w-[70px] h-[70px] p-[6px] rounded-full bg-[#5d6680]">
-          <img src="/people-04.png" alt="people" className="w-full h-full" />
+          <Image
+            src="/people-04.png"
+            alt="people"
+            className="w-full h-full"
+            height={70}
+            width={70}
+          />
         </div>
 
         <div className="hidden lg:block absolute bottom-[20%] left-[15%] w-[70px] h-[70px] p-[6px] rounded-full bg-[#5d6680]">
-          <img src="/people-05.png" alt="people" className="w-full h-full" />
+          <Image
+            src="/people-05.png"
+            alt="people"
+            className="w-full h-full"
+            height={70}
+            width={70}
+          />
         </div>
         <div className="absolute top-0 right-[22%] w-[70px] h-[70px] p-[6px] rounded-full bg-[#5d6680]">
-          <img src="/people-06.png" alt="people" className="w-full h-full" />
+          <Image
+            src="/people-06.png"
+            alt="people"
+            className="w-full h-full"
+            height={70}
+            width={70}
+          />
         </div>
         {/* Character on Map ends */}
       </motion.div>
