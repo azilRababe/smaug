@@ -1,4 +1,8 @@
+"use client";
+
 import "../styles/globals.css";
+
+import { Toaster } from "react-hot-toast";
 
 const RootLayout = ({ children }) => (
   <html lang="en">
@@ -23,7 +27,10 @@ const RootLayout = ({ children }) => (
       <meta property="og:url" content="https://smaug-x.com" />
       <link rel="canonical" href="https://smaug-x.com" />
     </head>
-    <body>{children}</body>
+    <body>
+      {children}
+      <Toaster />
+    </body>
   </html>
 );
 

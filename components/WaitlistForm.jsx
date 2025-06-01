@@ -1,38 +1,45 @@
 "use client";
 
 import { useState } from "react";
-// import { db, analytics } from "../lib/firebase";
-// import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-// import { logEvent } from "firebase/analytics";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { logEvent } from "firebase/analytics";
+
+import { db, analytics } from "../lib/firebase";
+
+import toast from "react-hot-toast";
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
-  // const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!email) return;
 
-    // if (!email.includes("@")) {
-    //   setMessage("Please enter a valid email.");
-    //   return;
-    // }
+    setLoading(true);
 
-    // try {
-    //   await addDoc(collection(db, "waitlist"), {
-    //     email: email.toLowerCase(),
-    //     joinedAt: serverTimestamp(),
-    //   });
+    try {
+      await addDoc(collection(db, "waitlist"), {
+        email,
+        timestamp: serverTimestamp(),
+      });
 
-    //   if (analytics) {
-    //     logEvent(analytics, "waitlist_joined", { email });
-    //   }
+      if (analytics) {
+        logEvent(analytics, "waitlist_joined", { email });
+      }
 
-    //   setMessage("🎉 You’ve been added to the waitlist!");
-    //   setEmail("");
-    // } catch (err) {
-    //   console.error("Error adding to waitlist:", err);
-    //   setMessage("Something went wrong. Please try again.");
-    // }
+      setSubmitted(true);
+      toast.success(
+        "You've successfully joined the waitlist! Stay tuned for updates."
+      );
+      setEmail("");
+    } catch (error) {
+      toast.error("Failed to join waitlist. Please try again.");
+      console.error("Error adding to waitlist:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -43,15 +50,16 @@ const WaitlistForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
         required
+        disabled={loading || submitted}
         className="p-2 w-full bg-transparent text-white placeholder:text-white focus:outline-none underline-offset-2 focus:border-[#ff5722] text-[16px] md:text-[18px] tracking-wide "
       />
       <button
+        disabled={loading || submitted}
         type="submit"
         className="text-white p-2 rounded w-full bg-[#ff5722] hover:bg-[#e64a19] transition-colors duration-300 "
       >
-        Join Waitlist
+        {loading ? "Joining..." : submitted ? "Joined!" : "Join Waitlist"}
       </button>
-      {/* {message && <p>{message}</p>} */}
     </form>
   );
 };
