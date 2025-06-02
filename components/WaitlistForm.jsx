@@ -6,9 +6,12 @@ import { logEvent } from "firebase/analytics";
 
 import toast from "react-hot-toast";
 
-import { db, analytics } from "../lib/firebase";
+import { db } from "../lib/firebase";
+import { useAnalytics } from "../lib/useAnalytics";
 
 const WaitlistForm = () => {
+  const analytics = useAnalytics();
+
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -48,7 +51,6 @@ const WaitlistForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
         required
-        disabled={loading || submitted}
         className="p-2 w-full bg-transparent text-white placeholder:text-white focus:outline-none underline-offset-2 focus:border-[#ff5722] text-[16px] md:text-[18px] tracking-wide "
       />
       <button
