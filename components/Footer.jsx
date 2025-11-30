@@ -1,59 +1,83 @@
 "use client";
 
 import Image from "next/image";
-
 import { motion } from "framer-motion";
 import { socials } from "../constants";
-
 import styles from "../styles";
 import { footerVariants } from "../utils/motion";
-
-import WaitlistForm from "./WaitlistForm";
+import ContactForm from "./ContactForm";
 
 const Footer = () => (
   <motion.footer
     variants={footerVariants}
     initial="hidden"
     whileInView="show"
-    className={`${styles.xPaddings} py-8 relative`}
+    className={`${styles.xPaddings} py-20 relative  text-white backdrop-blur-sm`}
   >
-    <div className="footer-gradient" />
-    <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
-      <div className="flex items-center justify-between flex-wrap gap-5">
-        <div>
-          <h4 className="font-bold md:text-[64px] text-[44px] text-white">
-            Enter the Flame
+    <div className={`${styles.innerWidth} mx-auto`} id="contact">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-start">
+        {/* Brand & Socials */}
+        <div className="flex flex-col gap-4">
+          <h4 className="font-bold text-[40px] md:text-[48px] leading-tight">
+            SMAUG-X
           </h4>
-          <p className="text-sm md:text-md text-[#ff5722] tracking-wider">
-            Don’t Miss Out — Get First Access & Limitless Benefits
+          <p className="text-[#ff5722] text-sm opacity-90">
+            Elite training for those who want real results.
           </p>
-        </div>
-        <WaitlistForm />
-      </div>
-
-      <div className="flex flex-col">
-        <div className="mb-[50px] h-[2px] bg-white opacity-10" />
-
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[24px] text-white">SMAUG-X</h4>
-          <p className="font-normal text-[14px] text-white opacity-50">
-            Copyright © 2025 Smaug-X. All rights reserved.
-          </p>
-
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-4">
             {socials.map((social) => (
-              <a key={social.name} href={social.link}>
+              <a
+                key={social.name}
+                href={social.link}
+                className="transform transition hover:scale-110"
+              >
                 <Image
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                   src={social.url}
                   alt={social.name}
-                  className="w-[24px] h-[24px] object-contain"
+                  className="w-[28px] h-[28px] object-contain"
                 />
               </a>
             ))}
           </div>
         </div>
+
+        {/* Contact Form */}
+        <div className="col-span-1 md:col-span-2 bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg flex flex-col gap-4">
+          <h5 className="font-semibold text-xl text-white mb-2">
+            Get in touch
+          </h5>
+          <ContactForm />
+        </div>
+
+        {/* Contact Info */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <h5 className="font-semibold text-xl mb-1">Contact</h5>
+            <p className="opacity-80">
+              Email:{" "}
+              <a href="mailto:contact@smaugx.com" className="text-[#ff5722]">
+                contact@smaugx.com
+              </a>
+            </p>
+            <p className="opacity-80">
+              Phone:{" "}
+              <a href="tel:+971588646955" className="text-[#ff5722]">
+                0588646955
+              </a>
+            </p>
+          </div>
+          <div>
+            <h5 className="font-semibold text-xl mb-1">Location</h5>
+            <p className="opacity-80">Dubai, UAE</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div className="mt-16 border-t border-white/10 pt-6 text-center text-sm opacity-60">
+        © 2025 Smaug-X. All rights reserved.
       </div>
     </div>
   </motion.footer>

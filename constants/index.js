@@ -1,3 +1,7 @@
+import { FaPerson } from "react-icons/fa6";
+import { HiUserGroup } from "react-icons/hi2";
+import { FaChildren } from "react-icons/fa6";
+
 export const exploreWorlds = [
   {
     id: "1",
@@ -21,25 +25,30 @@ export const exploreWorlds = [
   },
 ];
 
-export const startingFeatures = [
-  "Reach out and help us understand your goals, lifestyle, and needs.",
-  "Get matched with a certified elite trainer tailored to your path.",
-  "Experience your first personalized workout, on us.",
-  "Choose your realm and start your transformation.",
+export const startingSteps = [
+  "Fill out the contact form with your goals",
+  "A coach will review your request and get in touch",
+  "Schedule an assessment session with your coach",
+  "Start your fitness journey",
 ];
 
 export const newFeatures = [
   {
-    imgUrl: "/vrpano.svg",
-    title: "A new world",
-    subtitle:
-      "we have the latest update with new world for you to try never mind",
+    imgUrl: <FaPerson />,
+    title: "1 on 1 Coaching",
+    subtitle: "Personalized training to reach your goals with expert guidance.",
   },
   {
-    imgUrl: "/headset.svg",
-    title: "More realistic",
+    imgUrl: <HiUserGroup />,
+    title: "Small Group Sessions",
     subtitle:
-      "In the latest update, your eyes are narrow, making the world more realistic than ever",
+      "Train with friends or family in a motivating, coach-led setting.",
+  },
+  {
+    imgUrl: <FaChildren />,
+    title: "Kids Programs",
+    subtitle:
+      "Fun, structured workouts that build strength and healthy habits.",
   },
 ];
 
@@ -70,14 +79,14 @@ export const socials = [
   //   url: "/twitter.svg",
   //   link: "https://twitter.com/VigneshGupta9",
   // },
-  {
-    name: "linkedin",
-    url: "/linkedin.svg",
-    link: "https://linkedin.com/company/smaugx",
-  },
+  // {
+  //   name: "linkedin",
+  //   url: "/linkedin.svg",
+  //   link: "https://linkedin.com/company/smaugx",
+  // },
   {
     name: "instagram",
     url: "/instagram.svg",
-    link: "https://www.instagram.com/smaugx_/",
+    link: "https://www.instagram.com/smaugxcoaching/",
   },
 ];

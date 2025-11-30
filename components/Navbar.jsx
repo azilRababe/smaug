@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import styles from "../styles";
 import { navVariants } from "../utils/motion";
 
+import OverlayMenu from "./OverlayMenu";
+
 const Navbar = () => (
   <motion.nav
     variants={navVariants}
@@ -15,25 +17,11 @@ const Navbar = () => (
   >
     <div className="absolute w-[50%] inset-0 gradient-01" />
     <div className={`${styles.innerWidth} mx-auto flex justify-between gap-8`}>
-      <Image
-        height={24}
-        width={24}
-        src="/search.svg"
-        alt="search"
-        className="w-[24px] h-[24px] object-contain"
-      />
-
       <h2 className="font-extrabold test-[24px] text-white leading-[30px]">
         SMAUG-X
       </h2>
 
-      <Image
-        height={24}
-        width={24}
-        src="/menu.svg"
-        alt="menu"
-        className="w-[24px] h-[24px] object-contain"
-      />
+      <OverlayMenu />
     </div>
   </motion.nav>
 );

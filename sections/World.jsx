@@ -16,9 +16,13 @@ const World = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <TypingText title="| we soar to your side" textStyles="text-center" />
+      <TypingText title="| We’re by your side" textStyles="text-center" />
       <TitleText
-        title={<>No matter where you roam, our coaches will find you.</>}
+        title={
+          <>
+            No matter where you are, our coaches stay connected and guide you.
+          </>
+        }
         textStyles="text-center"
       />
 

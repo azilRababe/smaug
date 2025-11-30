@@ -1,13 +1,10 @@
 "use client";
 
-import Image from "next/image";
-
 import { motion } from "framer-motion";
 import styles from "../styles";
-import { staggerContainer, fadeIn, planetVariants } from "../utils/motion";
-import { StartSteps, TitleText, TypingText } from "../components";
-
-import { startingFeatures } from "../constants";
+import { staggerContainer, fadeIn } from "../utils/motion";
+import { TypingText, TitleText } from "../components";
+import { startingSteps } from "../constants";
 
 const GetStarted = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -16,31 +13,33 @@ const GetStarted = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}
+      className={`${styles.innerWidth} mx-auto flex flex-col items-center gap-12`}
     >
       <motion.div
-        variants={planetVariants("left")}
-        className={`${styles.flexCenter} flex-1`}
+        variants={fadeIn("up", "tween", 0.2, 1)}
+        className="flex flex-col items-center text-center max-w-4xl"
       >
-        <Image
-          height={500}
-          width={500}
-          src="/trainers01.png"
-          alt="Get-Started"
-          className="w-[90%] h-[90%] object-content"
-        />
+        <TypingText title="| Schedule Your First Session" />
+        <TitleText title="Getting started is quick and easy" />
       </motion.div>
+
       <motion.div
-        variants={fadeIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] flex justify-center flex-col"
+        variants={fadeIn("up", "tween", 0.4, 1)}
+        className="w-full flex flex-wrap justify-center gap-10"
       >
-        <TypingText title="|  Book Your Private Onboarding" />
-        <TitleText title={<> Get Started with just a few steps </>} />
-        <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
-          {startingFeatures.map((features, index) => (
-            <StartSteps key={features} number={index + 1} text={features} />
-          ))}
-        </div>
+        {startingSteps.map((feature, index) => (
+          <div
+            key={index}
+            className="group flex flex-col items-center md:items-start bg-[#1e1e1e] rounded-3xl p-6 max-w-[280px] shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+          >
+            <div className="flex items-center justify-center w-[70px] h-[70px] rounded-2xl bg-gradient-to-r from-[#ff5722] to-[#ff8a50] mb-4 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+              0{index + 1}
+            </div>
+            <p className="text-center md:text-left text-[17px] text-[#ccc] leading-7 group-hover:text-white transition-colors duration-300">
+              {feature}
+            </p>
+          </div>
+        ))}
       </motion.div>
     </motion.div>
   </section>

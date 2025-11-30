@@ -6,7 +6,7 @@ import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 
 const About = () => (
-  <section className={`${styles.paddings} relative z-10`}>
+  <section className={`${styles.paddings} relative z-10`} id="about-us">
     <div className="gradient-02 z-0" />
 
     <motion.div
@@ -16,16 +16,17 @@ const About = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
-      <TypingText title="| Ignite Your Strength" textStyles="text-center" />
+      <TypingText title="| About Us" textStyles="text-center" />
 
       <motion.p
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
       >
-        <span className="font-extrabold"> Smaug-X </span> isn’t just coaching —
-        it’s a transformation. We blend ancient discipline with cutting-edge
-        tech, delivering concierge-level fitness for those who demand the
-        extraordinary.
+        <span className="font-extrabold"> Smaug-X </span>
+        is more than coaching — it’s a complete lifestyle transformation
+        experience. We combine proven athletic training principles with
+        cutting-edge technology to deliver personalized, high-performance
+        coaching for individuals who demand exceptional results.
       </motion.p>
 
       <motion.img
