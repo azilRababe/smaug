@@ -1,12 +1,5 @@
 import nodemailer from "nodemailer";
 
-interface MailData {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  message: string;
-}
-
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -15,12 +8,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export const sendMail = async ({
-  name,
-  email,
-  phoneNumber,
-  message,
-}: MailData) => {
+const sendMail = async ({ name, email, phoneNumber, message }) => {
   try {
     const info = await transporter.sendMail({
       from: `"${name}" <${email}>`,
@@ -38,3 +26,5 @@ export const sendMail = async ({
     return { success: false, error };
   }
 };
+
+export default sendMail;

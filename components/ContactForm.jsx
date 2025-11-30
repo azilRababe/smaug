@@ -23,7 +23,7 @@ const ContactForm = () => {
     transition
   `;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
@@ -36,9 +36,7 @@ const ContactForm = () => {
       if (res.ok) {
         toast.success(
           "Message sent successfully! We will get back to you soon.",
-          {
-            duration: 6000,
-          }
+          { duration: 6000 },
         );
         setName("");
         setEmail("");
@@ -79,16 +77,7 @@ const ContactForm = () => {
         type="email"
         placeholder="Your Email"
         required
-        className="
-          w-full px-4 py-3 
-          rounded-md
-          bg-[#5a5a5a] 
-          border border-[#707070]
-          text-white
-          placeholder-[#cfcfcf]
-          focus:outline-none focus:border-[#ff5722]
-          transition
-        "
+        className={`${inputClassName}`}
       />
 
       {/* PHONE */}
@@ -97,16 +86,7 @@ const ContactForm = () => {
         onChange={(e) => setPhoneNumber(e.target.value)}
         type="tel"
         placeholder="Your Phone Number"
-        className="
-          w-full px-4 py-3 
-          rounded-md
-          bg-[#5a5a5a] 
-          border border-[#707070]
-          text-white
-          placeholder-[#cfcfcf]
-          focus:outline-none focus:border-[#ff5722]
-          transition
-        "
+        className={`${inputClassName}`}
       />
 
       {/* MESSAGE */}
@@ -116,17 +96,7 @@ const ContactForm = () => {
         placeholder="Tell us your fitness goals"
         rows={4}
         required
-        className="
-          w-full px-4 py-3
-          rounded-md
-          bg-[#5a5a5a]
-          border border-[#707070]
-          text-white
-          placeholder-[#cfcfcf]
-          focus:outline-none focus:border-[#ff5722]
-          transition
-          resize-none
-        "
+        className={`${inputClassName} resize-none`}
       />
 
       {/* BUTTON */}
@@ -144,8 +114,8 @@ const ContactForm = () => {
         {loading
           ? "Please Wait ..."
           : submitted
-          ? "Message Sent!"
-          : "Send Message"}
+            ? "Message Sent!"
+            : "Send Message"}
       </button>
     </form>
   );

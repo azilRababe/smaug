@@ -11,13 +11,17 @@ const menuItems = [
   { href: "#contact", label: "Contact Us" },
 ];
 
-export default function OverlayMenu() {
+const OverlayMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <div className={`overlay ${isOpen ? "open" : ""}`}>
-        <button className="closebtn" onClick={() => setIsOpen(false)}>
+        <button
+          className="closebtn"
+          onClick={() => setIsOpen(false)}
+          type="button"
+        >
           &times;
         </button>
 
@@ -52,4 +56,6 @@ export default function OverlayMenu() {
       </span>
     </>
   );
-}
+};
+
+export default OverlayMenu;
