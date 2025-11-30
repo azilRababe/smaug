@@ -10,26 +10,10 @@ interface MailData {
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: process.env.USER_EMAIL || "azilrababe@gmail.com",
-    pass: process.env.USER_PASSWORD || "gzpm aaui cyfd dzaf",
+    user: process.env.USER_EMAIL,
+    pass: process.env.USER_PASSWORD,
   },
 });
-
-// export const sendMail = async ({
-//   name,
-//   email,
-//   phoneNumber,
-//   message,
-// }: MailData) => {
-//   const info = await transporter.sendMail({
-//     from: email,
-//     to: process.env.USER_EMAIL,
-//     subject: `SmaugX | New message from ${name}`,
-//     text: message,
-//   });
-
-//   console.log("Message sent: %s", info.messageId);
-// };
 
 export const sendMail = async ({
   name,
@@ -40,7 +24,7 @@ export const sendMail = async ({
   try {
     const info = await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: process.env.USER_EMAIL || "azilrababe@gmail.com",
+      to: process.env.USER_EMAIL,
       subject: `SmaugX | New message from ${name}`,
       text: `You have received a new message from ${name} (${email}${
         phoneNumber ? `, ${phoneNumber}` : ""
