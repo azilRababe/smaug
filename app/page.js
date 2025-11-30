@@ -6,7 +6,7 @@ import {
   GetStarted,
   Hero,
   Insights,
-  // WhatsNew,
+  WhatsNew,
   World,
 } from "../sections";
 
@@ -23,7 +23,7 @@ const Page = () => (
     <div className="relative">
       <GetStarted />
       <div className="gradient-04 z-0" />
-      {/* <WhatsNew /> */}
+      <WhatsNew />
     </div>
     <World />
     <div className="relative">
