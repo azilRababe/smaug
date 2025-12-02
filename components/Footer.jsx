@@ -1,86 +1,86 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { socials } from "../constants";
-import styles from "../styles";
 import { footerVariants } from "../utils/motion";
-import ContactForm from "./ContactForm";
+import styles from "../styles";
+import { FaWhatsapp } from "react-icons/fa";
+import { IoIosArrowUp } from "react-icons/io";
 
-const Footer = () => (
-  <motion.footer
-    variants={footerVariants}
-    initial="hidden"
-    whileInView="show"
-    className={`${styles.xPaddings} py-20 relative  text-white backdrop-blur-sm`}
-  >
-    <div className={`${styles.innerWidth} mx-auto`} id="contact">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-start">
-        {/* Brand & Socials */}
-        <div className="flex flex-col gap-4">
-          <h4 className="font-bold text-[40px] md:text-[48px] leading-tight">
+const Footer = () => {
+  return (
+    <motion.footer
+      variants={footerVariants}
+      initial="hidden"
+      whileInView="show"
+      className={`${styles.xPaddings} py-24 relative bg-transparent text-white`}
+    >
+      <div
+        className={`${styles.innerWidth} mx-auto grid grid-cols-1 lg:grid-cols-4 gap-12`}
+      >
+        {/* Left section */}
+        <div className="col-span-2 flex flex-col justify-center">
+          <h1 className="text-5xl md:text-7xl font-semibold leading-[1.1] text-orange-600">
             SMAUG-X
-          </h4>
-          <p className="text-[#ff5722] text-sm opacity-90">
-            Elite training for those who want real results.
-          </p>
-          <div className="flex gap-4 mt-4">
-            {socials.map((social) => (
-              <a
-                key={social.name}
-                href={social.link}
-                className="transform transition hover:scale-110"
-              >
-                <Image
-                  width={28}
-                  height={28}
-                  src={social.url}
-                  alt={social.name}
-                  className="w-[28px] h-[28px] object-contain"
-                />
-              </a>
-            ))}
+          </h1>
+          <span className="text-6xl md:text-7xl font-light mt-4">
+            Your goals, our mission
+          </span>
+        </div>
+
+        {/* Middle circle with divider */}
+        <div className="relative flex justify-center items-center">
+          <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-white/10"></div>
+
+          <div className="flex flex-col items-center">
+            <div className="w-40 h-40 rounded-full bg-orange-600 flex flex-col items-center justify-center text-center cursor-pointer shadow-lg hover:scale-105 transition-all">
+              <FaWhatsapp size={28} className="text-white mb-2" />
+              <span className="text-white text-sm">Let's Chat</span>
+            </div>
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="col-span-1 md:col-span-2 bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg flex flex-col gap-4">
-          <h5 className="font-semibold text-xl text-white mb-2">
-            Get in touch
-          </h5>
-          <ContactForm />
-        </div>
-
-        {/* Contact Info */}
-        <div className="flex flex-col gap-6">
+        {/* Right columns */}
+        <div className="grid grid-cols-2 gap-10">
           <div>
-            <h5 className="font-semibold text-xl mb-1">Contact</h5>
-            <p className="opacity-80">
-              Email:{" "}
-              <a href="mailto:contact@smaugx.com" className="text-[#ff5722]">
-                contact@smaugx.com
-              </a>
-            </p>
-            <p className="opacity-80">
-              Phone:{" "}
-              <a href="tel:+971588646955" className="text-[#ff5722]">
-                0588646955
-              </a>
-            </p>
+            <h4 className="text-lg font-semibold mb-4">Our services</h4>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li>1 on 1 Coaching</li>
+              <li>Small group sessions</li>
+              <li>Kids Programs</li>
+            </ul>
           </div>
+
           <div>
-            <h5 className="font-semibold text-xl mb-1">Location</h5>
-            <p className="opacity-80">Dubai, UAE</p>
+            <h4 className="text-lg font-semibold mb-4">Useful links</h4>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li>Home</li>
+              <li>Faq</li>
+              <li>Why Us</li>
+              <li>Services</li>
+              <li>Contact</li>
+            </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
-      <div className="mt-16 border-t border-white/10 pt-6 text-center text-sm opacity-60">
-        © 2025 Smaug-X. All rights reserved.
+      {/* Bottom divider */}
+      <div className="w-full border-t border-white/10 mt-16 pt-8 text-sm opacity-80 flex flex-col lg:flex-row justify-between gap-6">
+        <p>© 2025 Smaug-X. All rights reserved.</p>
+        <p>
+          Coaching sessions are held at your preferred gym, outdoor spot, or any
+          place that fits your routine.
+        </p>
       </div>
-    </div>
-  </motion.footer>
-);
+
+      {/* Floating WhatsApp button */}
+      <a
+        href="#"
+        className="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-transparent border border-white/20 flex items-center justify-center shadow-xl cursor-pointer hover:scale-110 transition-all"
+      >
+        <IoIosArrowUp size={32} className="text-white" />
+      </a>
+    </motion.footer>
+  );
+};
 
 export default Footer;

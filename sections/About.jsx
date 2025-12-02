@@ -23,7 +23,7 @@ const About = () => (
         className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
       >
         <span className="font-extrabold"> Smaug-X </span>
-        is more than coaching — it’s a complete lifestyle transformation
+        is more than coaching, it’s a complete lifestyle transformation
         experience. We combine proven athletic training principles with
         cutting-edge technology to deliver personalized, high-performance
         coaching for individuals who demand exceptional results.

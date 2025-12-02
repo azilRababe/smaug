@@ -1,9 +1,12 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { fadeIn, staggerContainer } from "../utils/motion";
+import styles from "../styles";
 
-const ContactForm = () => {
+const ContactUsSection = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -13,12 +16,12 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
 
   const inputClassName = `
-    w-full px-4 py-3 
-    rounded-md
-    bg-[#5a5a5a] 
-    border border-[#707070]
+    w-full p-4
+    rounded-xl
+    border border-[#6a6a6a]
+    bg-transparent
     text-white
-    placeholder-[#cfcfcf]
+    placeholder:text-gray-400
     focus:outline-none focus:border-[#ff5722]
     transition
   `;
@@ -59,66 +62,82 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-      {/* NAME */}
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        type="text"
-        placeholder="Your Name"
-        required
-        className={`${inputClassName}`}
-      />
-
-      {/* EMAIL */}
-      <input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        type="email"
-        placeholder="Your Email"
-        required
-        className={`${inputClassName}`}
-      />
-
-      {/* PHONE */}
-      <input
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-        type="tel"
-        placeholder="Your Phone Number"
-        className={`${inputClassName}`}
-      />
-
-      {/* MESSAGE */}
-      <textarea
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Tell us your fitness goals"
-        rows={4}
-        required
-        className={`${inputClassName} resize-none`}
-      />
-
-      {/* BUTTON */}
-      <button
-        disabled={loading || submitted}
-        type="submit"
-        className="
-          mt-2 bg-[#ff5722]
-          py-3 rounded-md
-          font-semibold text-white
-          hover:opacity-90
-          transition
-        "
+    <section className={`${styles.paddings} relative z-10`}>
+      {/* Parent handles the scroll fade */}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-6`}
       >
-        {loading
-          ? "Please Wait ..."
-          : submitted
-            ? "Message Sent!"
-            : "Send Message"}
-      </button>
-    </form>
+        <motion.div
+          variants={fadeIn("right", "tween", 0.3, 1)}
+          className="flex-1 w-full gradient-05 sm:p-8 p-4 rounded-[32px] border border-[#6a6a6a] backdrop-blur-md flex flex-col justify-center"
+        >
+          <div className="w-full sm:p-8 p-4 flex flex-col justify-center">
+            <h4 className="font-bold sm:text-[32px] text-[26px] sm:leading-[40px] leading-[36px] text-orange-600 text-center lg:text-left">
+              Get in Touch with Smaug-X
+            </h4>
+            <p className="mt-6 font-normal sm:text-[20px] text-[16px] sm:leading-[28px] leading-[22px] text-white text-center lg:text-left">
+              Have questions or want to start your fitness journey? Fill out the
+              form and our team will get back to you shortly.
+            </p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={fadeIn("left", "tween", 0.3, 1)}
+          className="flex-1 w-full gradient-05 sm:p-8 p-4 rounded-[32px] border border-[#6a6a6a] backdrop-blur-md flex flex-col justify-center"
+        >
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              className={inputClassName}
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className={inputClassName}
+            />
+            <input
+              type="tel"
+              placeholder="Your Phone Number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className={inputClassName}
+            />
+            <textarea
+              rows={4}
+              placeholder="Tell us your fitness goals"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              className={`${inputClassName} resize-none`}
+            />
+            <button
+              type="submit"
+              disabled={loading || submitted}
+              className="mt-4 bg-orange-600 text-white font-semibold py-3 rounded-xl hover:bg-orange-500 transition-colors"
+            >
+              {loading
+                ? "Please Wait ..."
+                : submitted
+                  ? "Message Sent!"
+                  : "Send Message"}
+            </button>
+          </form>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };
 
-export default ContactForm;
+export default ContactUsSection;
