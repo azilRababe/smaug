@@ -7,7 +7,7 @@ import styles from "../../styles";
 import { fadeIn, staggerContainer, zoomIn } from "../../utils/motion";
 import Image from "next/image";
 import Faq from "../../components/Faq";
-
+import Services from "../../sections/Services";
 const Page = () => (
   <div className="bg-primary-black overflow-hidden">
     <Navbar />
@@ -21,7 +21,7 @@ const Page = () => (
         className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-6`}
       >
         {/* Image on the left */}
-        {/* <motion.div
+        <motion.div
           variants={fadeIn("right", "tween", 0.2, 1)}
           className="relative flex-[0.5] flex justify-center items-center"
         >
@@ -32,10 +32,10 @@ const Page = () => (
             alt="training"
             className="w-full lg:h-[610px] h-auto min-h-[210px] object-fit rounded-[40px]"
           />
-        </motion.div> */}
+        </motion.div>
 
         {/* Text on the right, taking more space */}
-        {/* <motion.div
+        <motion.div
           variants={fadeIn("left", "tween", 0.2, 1)}
           className="flex-[0.7] flex flex-col justify-center gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
         >
@@ -56,15 +56,15 @@ const Page = () => (
             around your goals, Smaug-X empowers you to evolve into your
             strongest, most confident self.
           </p>
-        </motion.div> */}
+        </motion.div>
       </motion.div>
       <div className="gradient-04 z-0" />
+      <Services id="services" />
     </div>
 
     <div className="relative">
-      <ContactForm />
+      <Faq />
       <div className="gradient-04 z-0" />
-      {/* <Faq /> */}
     </div>
 
     <Footer />

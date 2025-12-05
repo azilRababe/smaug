@@ -32,7 +32,7 @@ export const startingSteps = [
   "Start your fitness journey",
 ];
 
-export const newFeatures = [
+export const ServicesItems = [
   {
     imgUrl: <FaPerson />,
     title: "1 on 1 Coaching",

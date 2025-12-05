@@ -5,8 +5,8 @@ import { TypingText } from "../components";
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 
-const About = () => (
-  <section className={`${styles.paddings} relative z-10`} id="about-us">
+const About = ({ id }) => (
+  <section className={`${styles.paddings} relative z-10`} id={id}>
     <div className="gradient-02 z-0" />
 
     <motion.div
@@ -16,17 +16,18 @@ const About = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
-      <TypingText title="| About Us" textStyles="text-center" />
+      <TypingText title="| G2K Smaug-X" textStyles="text-center" />
 
       <motion.p
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[8px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
       >
         <span className="font-extrabold"> Smaug-X </span>
-        is more than coaching, it’s a complete lifestyle transformation
-        experience. We combine proven athletic training principles with
-        cutting-edge technology to deliver personalized, high-performance
-        coaching for individuals who demand exceptional results.
+        is a high-performance fitness coaching company that helps you reach your
+        full potential. We provide personalized training programs, expert
+        guidance, and technology-driven tools to improve strength, endurance,
+        and overall lifestyle. Whether you’re starting out or aiming for peak
+        performance, Smaug-X is your partner for real results.
       </motion.p>
 
       <motion.img

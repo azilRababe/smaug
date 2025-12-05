@@ -62,7 +62,7 @@ const ContactUsSection = () => {
   };
 
   return (
-    <section className={`${styles.paddings} relative z-10`}>
+    <section className={`${styles.paddings} relative z-10`} id="contactForm">
       {/* Parent handles the scroll fade */}
       <motion.div
         variants={staggerContainer}

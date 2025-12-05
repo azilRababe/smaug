@@ -16,12 +16,12 @@ const RootLayout = ({ children }) => (
       <title>SmaugX | Fitness & Wellness </title>
       <meta
         name="description"
-        content="SmaugX is an elite fitness coaching company based in Dubai, offering tailored 1:1 performance training for high-achievers, athletes, and professionals. We don’t believe in generic algorithms. we build strength, mastery, and transformation through real human coaching."
+        content="SmaugX is an elite fitness coaching company based in Dubai, offering tailored 1:1 performance training for high-achievers, athletes, and professionals."
       />
       <meta property="og:title" content="SmaugX" />
       <meta
         property="og:description"
-        content="SmaugX is an elite fitness coaching company based in Dubai, offering tailored 1:1 performance training for high-achievers, athletes, and professionals. We don’t believe in generic algorithms. we build strength, mastery, and transformation through real human coaching."
+        content="SmaugX is an elite fitness coaching company based in Dubai, offering tailored 1:1 performance training for high-achievers, athletes, and professionals."
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://smaug-x.com" />

@@ -16,7 +16,7 @@ const Insights = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <TypingText title="| Who We Are?" textStyles="text-center" />
+      <TypingText title="| Why Us...?" textStyles="text-center" />
       <TitleText title="What Sets Us Apart..." textStyles="text-center" />
 
       <div className="mt-[50px] flex flex-col gap-[30px]">

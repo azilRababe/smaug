@@ -2,19 +2,29 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { RiMenu3Fill, RiCloseLargeLine } from "react-icons/ri";
 import styles from "../styles";
 import { navVariants } from "../utils/motion";
-import { RiMenu3Fill, RiCloseLargeLine } from "react-icons/ri";
-
-const menuItems = [
-  { href: "/", label: "Home" },
-  { href: "/contact", label: "About us" },
-  { href: "#services", label: "Services" },
-  { href: "/contact/#contact", label: "Contact us" },
-];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = [
+    { href: "/", label: "Home" },
+    {
+      href: "/about",
+      label: "About us",
+    },
+    {
+      href: "/about#services",
+      label: "Services",
+    },
+    {
+      href: "#contact",
+      label: "Contact",
+    },
+  ];
 
   return (
     <motion.nav
@@ -50,19 +60,22 @@ const Navbar = () => {
             {/* Desktop menu */}
             <ul className="hidden md:flex gap-8 items-center font-medium ">
               {menuItems.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-white hover:text-orange-600"
-                  >
-                    {item.label}
-                  </a>
+                <li
+                  key={item.href}
+                  className="cursor-pointer text-white hover:text-orange-600 transition"
+                >
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
               <li>
-                <button className="bg-orange-600 text-white px-4 py-2 hover:bg-orange-700 transition rounded-full border-b border-white/20 shadow-md ">
-                  Book Your Session
-                </button>
+                <Link href="/contact" type="button">
+                  <button
+                    type="button"
+                    className="bg-orange-600 text-white px-4 py-2 hover:bg-orange-700 transition rounded-full border-b border-white/20 shadow-md "
+                  >
+                    Book Your Session
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -71,17 +84,23 @@ const Navbar = () => {
           {isOpen && (
             <ul className="flex flex-col gap-4 px-4 py-4 bg-white/20 border-t md:hidden font-medium ">
               {menuItems.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="hover:text-orange-600">
-                    {item.label}
-                  </a>
+                <li
+                  key={item.href}
+                  className="cursor-pointer text-white hover:text-orange-600 transition"
+                >
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
               <li>
                 <hr className="border-white/20 mb-5" />
-                <button className="bg-[#ff5722] text-white px-4 py-2 rounded w-full hover:bg-orange-700 transition border-b border-white/20 shadow-md ">
-                  Book Your Session
-                </button>
+                <Link href="/contact">
+                  <button
+                    type="button"
+                    className="bg-[#ff5722] text-white px-4 py-2 rounded w-full hover:bg-orange-700 transition border-b border-white/20 shadow-md "
+                  >
+                    Book Your Session
+                  </button>
+                </Link>
               </li>
             </ul>
           )}
