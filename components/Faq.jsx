@@ -29,7 +29,7 @@ const questions = [
   },
 ];
 
-const Faq = () => {
+const Faq = ({ id }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (i) => {
@@ -46,7 +46,7 @@ const Faq = () => {
     >
       <h2 className="text-center text-white font-bold text-4xl mb-12">FAQ</h2>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4" id={id}>
         {questions.map((item, i) => (
           <motion.div
             key={i}

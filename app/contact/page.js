@@ -67,7 +67,7 @@ const Page = () => (
       {/* <Faq /> */}
     </div>
 
-    <Footer />
+    <Footer id="contact" />
   </div>
 );
 

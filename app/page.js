@@ -27,11 +27,11 @@ const Page = () => (
     </div>
     <World />
     <div className="relative">
-      <Insights />
+      <Insights id="why-us" />
       <div className="gradient-04 z-0" />
       <Feedback />
     </div>
-    <Footer />
+    <Footer id="contact" />
   </div>
 );
 

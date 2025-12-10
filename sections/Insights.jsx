@@ -7,8 +7,8 @@ import { insights } from "../constants";
 import { InsightCard, TitleText, TypingText } from "../components";
 import { staggerContainer } from "../utils/motion";
 
-const Insights = () => (
-  <section className={`${styles.paddings} relative z-10`} id="why-us">
+const Insights = ({ id }) => (
+  <section className={`${styles.paddings} relative z-10`} id={id}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"

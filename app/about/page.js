@@ -30,14 +30,15 @@ const Page = () => (
             height={3648}
             src="/outdoorTraining.jpg"
             alt="training"
-            className="w-full lg:h-[610px] h-auto min-h-[210px] object-fit rounded-[40px]"
+            className="w-[90%] lg:h-[610px] h-auto min-h-[210px] object-fit rounded-[40px]"
           />
         </motion.div>
 
         {/* Text on the right, taking more space */}
         <motion.div
           variants={fadeIn("left", "tween", 0.2, 1)}
-          className="flex-[0.7] flex flex-col justify-center gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
+          // className=" w-[90%] flex-[0.7] flex flex-col justify-center gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
+          className="w-[90%] lg:w-auto flex-[0.7] flex flex-col justify-center gradient-05 sm:p-8 p-4 rounded-[32px] border border-[#6a6a6a] relative mx-auto lg:mx-0"
         >
           <div className="feedback-gradient" />
 
@@ -63,11 +64,11 @@ const Page = () => (
     </div>
 
     <div className="relative">
-      <Faq />
+      <Faq id="faq" />
       <div className="gradient-04 z-0" />
     </div>
 
-    <Footer />
+    <Footer id="contact" />
   </div>
 );
 

@@ -11,18 +11,21 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { href: "/", label: "Home" },
+    { id: 1, href: "/", label: "Home" },
     {
-      href: "/about",
-      label: "About us",
+      id: 2,
+      href: "about",
+      label: "About",
     },
     {
-      href: "/about#services",
+      id: 3,
+      href: "about#services",
       label: "Services",
     },
     {
+      id: 4,
       href: "#contact",
-      label: "Contact",
+      label: "Contact Us",
     },
   ];
 
@@ -61,10 +64,10 @@ const Navbar = () => {
             <ul className="hidden md:flex gap-8 items-center font-medium ">
               {menuItems.map((item) => (
                 <li
-                  key={item.href}
+                  key={item.id}
                   className="cursor-pointer text-white hover:text-orange-600 transition"
                 >
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={`/${item.href}`}>{item.label}</Link>
                 </li>
               ))}
               <li>
@@ -85,10 +88,10 @@ const Navbar = () => {
             <ul className="flex flex-col gap-4 px-4 py-4 bg-white/20 border-t md:hidden font-medium ">
               {menuItems.map((item) => (
                 <li
-                  key={item.href}
+                  key={item.id}
                   className="cursor-pointer text-white hover:text-orange-600 transition"
                 >
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={`/${item.href}`}>{item.label}</Link>
                 </li>
               ))}
               <li>

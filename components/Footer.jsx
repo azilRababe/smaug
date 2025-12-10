@@ -5,21 +5,22 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoIosArrowUp } from "react-icons/io";
 import { footerVariants } from "../utils/motion";
 import styles from "../styles";
+import Link from "next/link";
 
 const footerLinks = [
-  { ref: "/", label: "Home" },
-  { ref: "#faq", label: "Faq" },
-  { ref: "#why-us", label: "Why Us" },
-  { ref: "#services", label: "Services" },
-  { ref: "#contact", label: "Contact" },
+  { id: 1, ref: "/", label: "Home" },
+  { id: 2, ref: "about#faq", label: "Faq" },
+  { id: 3, ref: "/#why-us", label: "Why Us" },
+  { id: 4, ref: "about#services", label: "Services" },
 ];
 
-const Footer = () => (
+const Footer = ({ id }) => (
   <motion.footer
     variants={footerVariants}
     initial="hidden"
     whileInView="show"
     className={`${styles.xPaddings} py-24 relative bg-transparent text-white`}
+    id={id}
   >
     <div
       className={`${styles.innerWidth} mx-auto grid grid-cols-1 lg:grid-cols-4 gap-12`}
@@ -35,16 +36,23 @@ const Footer = () => (
       </div>
 
       {/* Middle circle with divider */}
-      <div className="relative flex justify-center items-center">
-        <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-white/10" />
+      <Link
+        href="https://wa.me/0588646955"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="relative flex justify-center items-center">
+          <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-white/10" />
 
-        <div className="flex flex-col items-center">
-          <div className="w-40 h-40 rounded-full bg-orange-600 flex flex-col items-center justify-center text-center cursor-pointer shadow-lg hover:scale-105 transition-all">
-            <FaWhatsapp size={28} className="text-white mb-2" />
-            <span className="text-white text-sm">Let's Chat</span>
+          <div className="flex flex-col items-center">
+            <div className="w-40 h-40 rounded-full bg-orange-600 flex flex-col items-center justify-center text-center cursor-pointer shadow-lg hover:scale-105 transition-all">
+              <FaWhatsapp size={28} className="text-white mb-2" />
+
+              <span className="text-white text-sm">Let's Chat</span>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       {/* Right columns */}
       <div className="grid grid-cols-2 gap-10">
@@ -62,12 +70,12 @@ const Footer = () => (
           <ul className="space-y-2 text-sm opacity-80">
             {footerLinks.map((link, index) => (
               <li key={index}>
-                <a
+                <Link
                   href={link.ref}
                   className="hover:text-orange-600 transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -86,7 +94,7 @@ const Footer = () => (
 
     {/* Floating WhatsApp button */}
     <a
-      href="https://wa.me/0588646955"
+      href="#"
       className="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-transparent border border-white/20 flex items-center justify-center shadow-xl cursor-pointer hover:scale-110 transition-all"
     >
       <IoIosArrowUp size={32} className="text-white" />
