@@ -13,7 +13,7 @@ const Explore = () => {
   const [active, setActive] = useState("2");
 
   return (
-    <section className={`${styles.paddings}`} id="explore">
+    <section className={`${styles.paddings}`}>
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -21,7 +21,6 @@ const Explore = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        {/* <TypingText title="| Ignite Your Strength" textStyles="text-center" /> */}
         <TitleText
           title={
             <>

@@ -20,7 +20,7 @@ const GetStarted = () => (
         className="flex flex-col items-center text-center max-w-4xl"
       >
         <TypingText title="| Schedule Your First Session" />
-        <TitleText title="Getting started is quick and easy" />
+        <TitleText title="Getting started in just a few steps" />
       </motion.div>
 
       <motion.div

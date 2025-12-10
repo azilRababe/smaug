@@ -7,8 +7,8 @@ import { insights } from "../constants";
 import { InsightCard, TitleText, TypingText } from "../components";
 import { staggerContainer } from "../utils/motion";
 
-const Insights = () => (
-  <section className={`${styles.paddings} relative z-10`} id="why-us">
+const Insights = ({ id }) => (
+  <section className={`${styles.paddings} relative z-10`} id={id}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
@@ -16,7 +16,7 @@ const Insights = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <TypingText title="| Who We Are?" textStyles="text-center" />
+      <TypingText title="| Why Us...?" textStyles="text-center" />
       <TitleText title="What Sets Us Apart..." textStyles="text-center" />
 
       <div className="mt-[50px] flex flex-col gap-[30px]">
